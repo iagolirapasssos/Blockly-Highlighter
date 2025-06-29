@@ -2,7 +2,7 @@
 
 [![Extension Icon](icon128.png)](icon128.png)
 
-📺 **Watch the demo video**: [https://youtu.be/your\_video\_id](https://youtu.be/your_video_id)
+📺 **Watch the demo video**: [https://youtu.be/your\_video\_id](https://youtu.be/9JejveXwCaY)
 
 ---
 
