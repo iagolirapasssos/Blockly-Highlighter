@@ -18,7 +18,7 @@
 * 🌐 **Language Support**: Switch between English, Português, and Español in the popup.
 * ⚡ **Fast & Lightweight**: No performance overhead—scripts run only on demand.
 
-## Installation
+## Installation in Chrome
 
 1. Clone this repository:
 
@@ -29,6 +29,13 @@
 3. Enable **Developer mode** in the top-right.
 4. Click **Load unpacked** and select the extension’s folder.
 5. Pin the extension icon to your toolbar for easy access.
+
+## Installation in Firefox
+
+1. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on…**.
+3. Select the `manifest.json` file from the extension folder.
+4. The **Blockly Highlighter** icon will appear—pin it for quick access.
 
 ## Usage
 
@@ -58,7 +65,7 @@ To modify or extend the extension:
 
 1. Make your changes in the `popup.html`, `popup.js`, `content_script.js`, or `styles.css` files.
 2. Increment the `version` in `manifest.json`.
-3. Reload the extension on `chrome://extensions/`.
+3. Reload the extension on `chrome://extensions/` (or `about:debugging` for Firefox).
 4. Test your changes in a Blockly workspace.
 
 ## Contributing
