@@ -1,81 +1,58 @@
-# Blockly Highlighter
+**Blockly Find Highlighter** – Use **Ctrl + Shift + F** to search and **Ctrl + Shift + L** to clear highlights
 
-[![Extension Icon](icon128.png)](icon128.png)
-
-📺 **Watch the demo video**: [https://youtu.be/9JejveXwCaY](https://youtu.be/9JejveXwCaY)
+[![Extension Icon](icon128.png)](icon128.png)  
+📺 **Demo**: [https://youtu.be/9JejveXwCaY](https://youtu.be/9JejveXwCaY)
 
 ---
 
-## Overview
+### What It Is
+A lightweight browser extension for Chrome and Firefox that highlights all Blockly blocks (MIT App Inventor, Kodular Creator, etc.) whose text contains your search term. It also shows a count of matched blocks.
 
-**Blockly Highlighter** is a lightweight Chrome extension designed to help you quickly locate, highlight, and clear visual blocks by keyword in Blockly-based environments such as MIT App Inventor and Kodular Creator.
+### Features
+- 🔍 **Keyboard Search**: Press **Ctrl + Shift + F** (or ⌘ + Shift + F on macOS) to open a prompt and enter your search phrase.  
+- ✨ **Neon Highlight**: All matching blocks get a yellow glow.  
+- 🔄 **Clear Highlights**: Press **Ctrl + Shift + L** to remove all highlights.  
+- 🔢 **Match Counter**: A badge in the top‑right corner shows how many blocks were highlighted.
 
-## Features
-
-* 🔍 **Keyword Search**: Find blocks whose text labels include your search term.
-* ✨ **Yellow Highlight**: Matching blocks are painted a distinct yellow to stand out.
-* 🔄 **Clear Highlights**: Restore all blocks to their original colors with a single click.
-* 🌐 **Language Support**: Switch between English, Português, and Español in the popup.
-* ⚡ **Fast & Lightweight**: No performance overhead—scripts run only on demand.
-
-## Installation in Chrome
-
-1. Clone this repository:
-
+### Installation (Chrome)
+1. Clone the repo:  
    ```bash
-   git clone git@github.com:iagolirapasssos/Blockly-Highlighter.git
+   git clone https://github.com/iagolirapasssos/Blockly-Highlighter.git
    ```
-2. Open Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer mode** in the top-right.
-4. Click **Load unpacked** and select the extension’s folder.
-5. Pin the extension icon to your toolbar for easy access.
+2. In Chrome, go to `chrome://extensions/`.  
+3. Enable **Developer mode**.  
+4. Click **Load unpacked** and select the extension folder.  
+5. (Optional) Pin the extension icon for quick access.
 
-## Installation in Firefox
+### Installation (Firefox)
+1. Open `about:debugging#/runtime/this-firefox`.  
+2. Click **Load Temporary Add-on…**.  
+3. Select the `manifest.json` file from the folder.  
+4. Pin the **Blockly Find Highlighter** icon in the toolbar.
 
-1. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on…**.
-3. Select the `manifest.json` file from the extension folder.
-4. The **Blockly Highlighter** icon will appear—pin it for quick access.
+### Usage
+1. Open a Blockly workspace (MIT App Inventor, Kodular Creator, etc.).  
+2. **Ctrl + Shift + F** (⌘ + Shift + F on macOS): enter your search term in the prompt.  
+3. Matching blocks will glow yellow and the match count will appear.  
+4. **Ctrl + Shift + L**: clear all highlights and hide the counter.
 
-## Usage
+### Permissions
+- `activeTab`: grants the extension temporary access to inject scripts into the current page when you invoke the search or clear shortcuts.  
+- Host permissions in `manifest.json`:  
+  - `https://creator.kodular.io/*`  
+  - `https://ai2.appinventor.mit.edu/*`
 
-1. Click the **Blockly Highlighter** icon in your toolbar.
-2. (Optional) Select your preferred language from the top-left dropdown (EN/PT/ES).
-3. Enter a keyword in the input field and press **Highlight** or hit **Enter**.
-4. All blocks containing that keyword will turn yellow.
-5. Click **Clear** to remove highlights and restore original colors.
+### Development
+1. Edit `manifest.json` or `content_script.js`.  
+2. Bump the version in `manifest.json`.  
+3. Reload the extension in **chrome://extensions** or **about:debugging**.  
+4. Test in a Blockly workspace.
 
-## Permissions
+### Contributing
+Contributions welcome! Please open an issue or submit a PR:  
+- Follow the existing code style.  
+- Update the version and changelog.  
+- Provide clear descriptions of features or fixes.
 
-The extension requests the following permissions:
-
-* `activeTab`: On user action, grant temporary access to the active tab to highlight blocks.
-* `scripting`: Inject scripts into the page when you click **Highlight** or **Clear**.
-* Host permissions (in `manifest.json`):
-
-  * `https://ai2.appinventor.mit.edu/*`
-  * `https://creator.kodular.io/*`
-  * Any additional Blockly-based URLs you wish to support.
-
-These permissions ensure the extension only runs on specified Blockly workspaces and only when explicitly triggered by the user.
-
-## Development
-
-To modify or extend the extension:
-
-1. Make your changes in the `popup.html`, `popup.js`, `content_script.js`, or `styles.css` files.
-2. Increment the `version` in `manifest.json`.
-3. Reload the extension on `chrome://extensions/` (or `about:debugging` for Firefox).
-4. Test your changes in a Blockly workspace.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request with your proposed changes. Be sure to:
-
-* Follow existing code style and formatting.
-* Increment the version and update the changelog if applicable.
-* Provide clear descriptions for any new features or fixes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+### License
+MIT License. See [LICENSE](LICENSE) for details.
