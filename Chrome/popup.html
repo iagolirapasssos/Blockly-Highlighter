@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <title>Blockly Highlighter</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="header">
-    <select id="langSelect" class="lang-select" aria-label="Select Language">
+    <select id="langSelect" class="lang-select">
       <option value="en">EN</option>
       <option value="pt">PT</option>
       <option value="es">ES</option>
     </select>
-    <button class="close-btn" id="closeBtn" aria-label="Close">×</button>
+    <button class="close-btn" id="closeBtn">×</button>
     <strong id="titleText">Blockly Highlighter</strong>
   </div>
   <div class="container">
@@ -22,17 +21,13 @@
       id="keyword"
       placeholder="Enter keyword..."
       autocomplete="off"
-      aria-label="Search keyword"
     />
     <div class="buttons">
-      <button class="btn btn-primary" id="highlightBtn">
-        <span>Highlight</span>
-      </button>
-      <button class="btn btn-secondary" id="clearBtn">
-        <span>Clear</span>
-      </button>
+      <button class="btn btn-primary" id="highlightBtn">Highlight</button>
+      <button class="btn btn-secondary" id="clearBtn">Clear</button>
     </div>
   </div>
   <script src="popup.js"></script>
 </body>
 </html>
+

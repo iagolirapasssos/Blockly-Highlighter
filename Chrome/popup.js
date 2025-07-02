@@ -35,8 +35,9 @@ function applyLanguage(lang) {
 }
 
 function sendMessage(action, payload = {}) {
-  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    chrome.tabs.sendMessage(
+  // Compatível com Chrome/Firefox
+  (chrome.tabs || browser.tabs).query({ active: true, currentWindow: true }, tabs => {
+    (chrome.tabs || browser.tabs).sendMessage(
       tabs[0].id,
       { action, ...payload },
       response => {
@@ -51,7 +52,6 @@ function sendMessage(action, payload = {}) {
   });
 }
 
-// Bind events
 highlightBtn.addEventListener('click', () => {
   const kw = keywordInput.value.trim();
   if (kw) sendMessage('highlight', { keyword: kw });
@@ -70,7 +70,6 @@ keywordInput.addEventListener('keydown', e => {
 langSelect.addEventListener('change', () => applyLanguage(langSelect.value));
 closeBtn.addEventListener('click', () => window.close());
 
-// Prevent ESC/blur closing
 window.addEventListener('keydown', e => {
   if (e.key === 'Escape') e.stopPropagation(), e.preventDefault();
 });
@@ -78,5 +77,5 @@ window.addEventListener('blur', e => {
   e.stopPropagation(); e.preventDefault(); window.focus();
 });
 
-// Initialize
 applyLanguage('en');
+
